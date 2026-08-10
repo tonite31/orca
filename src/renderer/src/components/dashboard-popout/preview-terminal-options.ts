@@ -22,7 +22,10 @@ export function buildPreviewAppearanceOptions(
   const fontWeights = resolveTerminalFontWeights(settings?.terminalFontWeight)
   return {
     fontSize: settings?.terminalFontSize ?? 14,
-    fontFamily: buildFontFamily(settings?.terminalFontFamily ?? ''),
+    fontFamily: buildFontFamily(
+      settings?.terminalFontFamily ?? '',
+      settings?.terminalCjkFontFamily ?? ''
+    ),
     fontWeight: fontWeights.fontWeight,
     fontWeightBold: fontWeights.fontWeightBold,
     cursorStyle,
